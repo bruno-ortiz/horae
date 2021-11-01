@@ -11,7 +11,12 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
+    implementation(kotlin("reflect"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2") {
+        exclude(group = "org.jetbrains.kotlin")
+    }
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0") {
+        exclude(group = "org.jetbrains.kotlin")
+    }
 
 }
